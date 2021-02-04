@@ -1428,7 +1428,7 @@ function ble/syntax:bash/simple-word/eval/.cache-update {
 ##   @var[in,out] _ble_syntax_bash_simple_eval
 function ble/syntax:bash/simple-word/eval/.cache-save {
   ((ext==148||ext==142)) && return 0
-  local ret; ble/string#quote-words "${@:3}"
+  local ret; ble/string#quote-words "${@:3:2}"
   ble/gdict#set _ble_syntax_bash_simple_eval "$1" "ext=$2 ret=($ret)"
 }
 function ble/syntax:bash/simple-word/eval/.cache-load {
